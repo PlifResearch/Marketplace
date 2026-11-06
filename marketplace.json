@@ -1,0 +1,5 @@
+{
+  "$schema": "./schema/marketplace.schema.json",
+  "version": 1,
+  "entries": []
+}
