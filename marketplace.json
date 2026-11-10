@@ -1,5 +1,113 @@
 {
   "$schema": "./schema/marketplace.schema.json",
   "version": 1,
-  "entries": []
+  "entries": [
+    {
+      "id": "exa-search",
+      "name": "Exa Search",
+      "description": "Busca na web e pesquisa código com resultados otimizados para agentes.",
+      "homepage": "https://exa.ai/mcp",
+      "repository": "https://github.com/exa-labs/exa-mcp-server",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "exa-mcp-server@3.4.3"] },
+      "env": [{ "name": "EXA_API_KEY", "description": "Chave de API do Exa.", "secret": true }],
+      "maintainer": "exa-labs",
+      "trust": "community"
+    },
+    {
+      "id": "context7-docs",
+      "name": "Context7",
+      "description": "Consulta documentação atualizada de bibliotecas e frameworks durante o desenvolvimento.",
+      "repository": "https://github.com/upstash/context7",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@upstash/context7-mcp@4.6.0"] },
+      "env": [{ "name": "CONTEXT7_API_KEY", "description": "Chave opcional para limites ampliados.", "secret": true }],
+      "maintainer": "upstash",
+      "trust": "community"
+    },
+    {
+      "id": "playwright-browser",
+      "name": "Playwright",
+      "description": "Automatiza navegador para navegar, inspecionar páginas e testar fluxos web.",
+      "repository": "https://github.com/microsoft/playwright-mcp",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@playwright/mcp@0.0.85"] },
+      "maintainer": "microsoft",
+      "trust": "community"
+    },
+    {
+      "id": "filesystem",
+      "name": "Filesystem",
+      "description": "Lê e gerencia arquivos limitados aos diretórios explicitamente autorizados.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem@2.2.0", "."] },
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    },
+    {
+      "id": "memory-knowledge-graph",
+      "name": "Memory",
+      "description": "Mantém memória persistente estruturada como um grafo de conhecimento.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory@2.1.0"] },
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    },
+    {
+      "id": "sequential-thinking",
+      "name": "Sequential Thinking",
+      "description": "Ajuda a decompor problemas complexos em etapas de raciocínio revisáveis.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@2.1.1"] },
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    },
+    {
+      "id": "postgres-database",
+      "name": "PostgreSQL",
+      "description": "Inspeciona schemas e executa consultas em bancos PostgreSQL configurados.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-postgres@0.6.2", "${POSTGRES_URL}"] },
+      "env": [{ "name": "POSTGRES_URL", "description": "String de conexão do banco PostgreSQL.", "secret": true }],
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    },
+    {
+      "id": "github-tools",
+      "name": "GitHub",
+      "description": "Acessa repositórios, issues, pull requests e arquivos pelo GitHub API.",
+      "repository": "https://github.com/github/github-mcp-server",
+      "transport": "stdio",
+      "install": { "command": "docker", "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server:0.30.0"] },
+      "env": [{ "name": "GITHUB_PERSONAL_ACCESS_TOKEN", "description": "Token do GitHub com os escopos necessários.", "secret": true }],
+      "maintainer": "github",
+      "trust": "community"
+    },
+    {
+      "id": "google-maps",
+      "name": "Google Maps",
+      "description": "Pesquisa lugares e rotas usando os serviços do Google Maps.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-google-maps@0.6.2"] },
+      "env": [{ "name": "GOOGLE_MAPS_API_KEY", "description": "Chave de API do Google Maps Platform.", "secret": true }],
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search",
+      "description": "Pesquisa na web e imagens usando a Brave Search API.",
+      "repository": "https://github.com/modelcontextprotocol/servers",
+      "transport": "stdio",
+      "install": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-brave-search@0.6.2"] },
+      "env": [{ "name": "BRAVE_API_KEY", "description": "Chave de API da Brave Search.", "secret": true }],
+      "maintainer": "modelcontextprotocol",
+      "trust": "community"
+    }
+  ]
 }
